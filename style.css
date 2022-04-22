@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', cursive;
+}
+
+html {
+  --bg: #f1f1f1;
+  --sec_bg: #fff;
+  --color: #000;
+  --hover_color: #e7e7e7;
+}
+
+body[data-theme="dark"] {
+  --bg: #0e0e0e;
+  --sec_bg: #222222;
+  --color: #fff;
+  --hover_color: #424242;
+}
+
+body {
+  background: var(--bg);
+}
+
+.main {
+  height: 100vh;
+  display: flex; align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  width: 300px;
+}
+
+.header {
+  height: 50px; width: 99%;
+  cursor: pointer;
+  background: #1b1a17;
+  border-radius: 15px 15px 0 0;
+  display: flex; align-items: center;
+}
+
+.switchBox {
+  margin-left: 20px;
+  width: 50px; height: 30px;
+  background: #d8d8d8;
+  border-radius: 20px;
+  position: relative;
+}
+
+.switchBox input {
+  height: 100%; width: 100%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  -webkit-appearance: none;
+}
+
+.switchBox .box {
+  height: 80%; width: 20px;
+  top: 10%; left: 4px;
+  position: absolute;
+  background: #6d6d6d;
+  border-radius: 20px;
+  transition: all .4s;
+}
+
+.switchBox input:checked ~ .box {
+  left: 60%;
+  background: #FF8C00;
+}
+
+.switchBox p {
+  height: 80%; width: 10rem;
+  top: 7px; left: 60px;
+  position: absolute;
+  font-family: 'Monument Extended', bold;
+  font-size: 1rem;
+  color: #ffffff;
+}
+  
+.input {
+  height: 60px; width: 99%;
+  background: #fff;
+}
+
+input {
+  cursor: pointer;
+}
+
+.input #display {
+  height: 60px; width: 74%;
+  border: none; outline: none;
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+.cancel_btn {
+  height: 60px; width: 24.8%;
+  border: 2px solid rgba(0, 0, 0, 0.137);
+  background: #ff8303;
+  font-size: 1.5rem; color: #ffffff;
+}
+
+.row {
+  width: 100%; margin: 10px 0;
+}
+
+.row input {
+  height: 66px; width: 24%;
+  background: var(--sec_bg);
+  color: var(--color);
+  border: 2px solid rgba(0, 0, 0, 0.137);
+  font-size: 1.5rem;
+}
+
+.active {
+  animation: anim .4s;
+}
+
+@keyframes anim {
+  0%, 100% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.1);
+    background: var(--hover_color);
+  }
+}
